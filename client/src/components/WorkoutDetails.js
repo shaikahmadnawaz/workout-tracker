@@ -1,5 +1,6 @@
 import React from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 const workoutDetails = ({ workout }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -27,7 +28,9 @@ const workoutDetails = ({ workout }) => {
         <strong>Reps: </strong>
         {workout.reps}
       </p>
-      <p>{workout.createdAt}</p>
+      <p>
+        {formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}
+      </p>
       <span className="material-symbols-outlined" onClick={handleClick}>
         delete
       </span>
