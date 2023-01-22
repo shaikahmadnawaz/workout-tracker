@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 // get all workouts
 const getWorkouts = async (req, res) => {
   const user_id = req.user._id;
-  const workouts = await Workout.find({ user_id }).sort({ createdBy: -1 });
+
+  const workouts = await Workout.find({ user_id }).sort({ createdAt: -1 });
+
   res.status(200).json(workouts);
 };
 
@@ -91,6 +93,8 @@ const updateWorkout = async (req, res) => {
   if (!workout) {
     return res.status(404).json({ error: "No such workout" });
   }
+
+  res.status(200).json(workout);
 };
 
 module.exports = {

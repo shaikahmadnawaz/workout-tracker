@@ -21,14 +21,12 @@ app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
 
 // connect to database
-mongoose.set("strictQuery", false);
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
-    console.log("connected to database");
     // listen for requests
     app.listen(process.env.PORT, () => {
-      console.log("listening for requests on port", process.env.PORT);
+      console.log("connected to db & listening on port", process.env.PORT);
     });
   })
   .catch((error) => {

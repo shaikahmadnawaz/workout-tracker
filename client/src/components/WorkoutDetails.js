@@ -1,12 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const workoutDetails = ({ workout }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { dispatch } = useWorkoutsContext();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { user } = useAuthContext();
 
   const handleClick = async () => {
