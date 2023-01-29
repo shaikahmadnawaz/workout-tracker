@@ -34,7 +34,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd workout-tracket
+  cd workout-tracker
 ```
 
 Install dependencies
